@@ -1,0 +1,4 @@
+C:\Users\aldo_\Desktop\Lab2Desarrollo\bin\MVCLaboratorio.dll
+C:\Users\aldo_\Desktop\Lab2Desarrollo\bin\MVCLaboratorio.pdb
+C:\Users\aldo_\Desktop\Lab2Desarrollo\obj\Debug\MVCLaboratorio.dll
+C:\Users\aldo_\Desktop\Lab2Desarrollo\obj\Debug\MVCLaboratorio.pdb
