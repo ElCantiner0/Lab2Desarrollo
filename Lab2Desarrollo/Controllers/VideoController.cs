@@ -33,7 +33,7 @@ namespace MVCLaboratorio.Controllers
             parametros.Add(new SqlParameter("@repro", repro));
             parametros.Add(new SqlParameter("@url", url));
 
-            BD.BaseHelper.ejecutarSentencia("sp_video_insertar", CommandType.StoredProcedure, parametros);
+            BD.BaseHelper.ejecutarSentencia("sp_video_insert", CommandType.StoredProcedure, parametros);
             return RedirectToAction("Index", "Video");
         }//Crear2
         public ActionResult Delete()
@@ -43,7 +43,11 @@ namespace MVCLaboratorio.Controllers
         [HttpPost]
         public ActionResult Delete(int idVideo)
         {
-            return View();
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@idVideo", idVideo));
+            BD.BaseHelper.ejecutarSentencia("Delete from video Where idVideo=@idVideo", CommandType.Text, parametros);
+
+            return RedirectToAction("Index", "Video");
         }//Delete 2
         public ActionResult Edit()
         {

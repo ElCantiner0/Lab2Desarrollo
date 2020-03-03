@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Create</title>
+    <title>Delete</title>
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <meta charset="UTF-8">
   <meta name="description" content="ASP.NET MVC 2 CRUD Video">
@@ -14,23 +14,16 @@
 </head>
 <body>
     <div>
-    <h1> Agregar Video
+    <h1> Eliminar video
         </h1>
 
-        <form action="/Video/Create" method="post">
+        <form action="/Video/Delete" method="post">
         <fieldset>
-        <legend>Agregar video a continuacion </legend>
+        <legend>Inserte el ID del video a eliminar </legend>
             <label for = "idVideo">idVideo</label>
             <input type="text" name="idVideo"/>
 
-            <label for="titulo">Titulo</label>
-            <input type="text" name="titulo"/>
-
-            <label for="repro">Reproducciones</label>
-            <input type="text" name="repro"/>
-
-            <label for="url">Url</label>
-            <input type="text" name="url"/>
+            
 
             <input type="submit" value="Agregar" />
        

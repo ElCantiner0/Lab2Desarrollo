@@ -4,7 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
+    
     <title>Videos</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+  <meta name="description" content="ASP.NET MVC 2 CRUD Video">
+  <meta name="keywords" content="ASP.NET, MVC, Facpya">
+  <meta name="author" content="ElCantiner0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div>
