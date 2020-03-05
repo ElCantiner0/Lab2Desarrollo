@@ -12,6 +12,9 @@ create procedure sp_video_insert
 @repro int,
 @url varchar(100)
 as 
+
 begin
+
 insert into video values (@idVideo, @titulo, @repro, @url)
+
 end
