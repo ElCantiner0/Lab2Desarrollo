@@ -25,7 +25,7 @@
 
             
 
-            <input type="submit" value="Agregar" />
+            <input type="submit" value="Eliminar" />
        
         </fieldset>   
         

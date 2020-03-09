@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Data;
 using System.Data.SqlClient;
 
+
+
 namespace MVCLaboratorio.Controllers
 {
     public class VideoController : Controller
@@ -27,13 +29,25 @@ namespace MVCLaboratorio.Controllers
         [HttpPost]
         public ActionResult Create(int idVideo, string titulo, int repro, string url)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@idVideo", idVideo));
-            parametros.Add(new SqlParameter("@titulo", titulo));
-            parametros.Add(new SqlParameter("@repro", repro));
-            parametros.Add(new SqlParameter("@url", url));
+            try
+            {
+                List<SqlParameter> parametros = new List<SqlParameter>();
+                parametros.Add(new SqlParameter("@idVideo", idVideo));
+                parametros.Add(new SqlParameter("@titulo", titulo));
+                parametros.Add(new SqlParameter("@repro", repro));
+                parametros.Add(new SqlParameter("@url", url));
 
-            BD.BaseHelper.ejecutarSentencia("sp_video_insert", CommandType.StoredProcedure, parametros);
+                BD.BaseHelper.ejecutarSentencia("sp_agregar_video_auto_plus", CommandType.StoredProcedure, parametros);
+
+
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            
+
             return RedirectToAction("Index", "Video");
         }//Crear2
         public ActionResult Delete()
@@ -45,7 +59,7 @@ namespace MVCLaboratorio.Controllers
         {
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@idVideo", idVideo));
-            BD.BaseHelper.ejecutarSentencia("Delete from video Where idVideo=@idVideo", CommandType.Text, parametros);
+            BD.BaseHelper.ejecutarSentencia("sp_delete_video", CommandType.StoredProcedure, parametros);
 
             return RedirectToAction("Index", "Video");
         }//Delete 2
@@ -62,7 +76,7 @@ namespace MVCLaboratorio.Controllers
             parametros.Add(new SqlParameter("@repro", repro));
             parametros.Add(new SqlParameter("@url", url));
 
-            BD.BaseHelper.ejecutarSentencia("Update video Set idVideo = @idVideo, titulo = @titulo, repro= @repro, url = @url WHERE idVideo = @idVideo", CommandType.Text, parametros);
+            BD.BaseHelper.ejecutarSentencia("sp_update_video_auto", CommandType.StoredProcedure, parametros);
 
             return RedirectToAction("Index", "Video");
         }//Update 2

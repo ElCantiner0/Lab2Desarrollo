@@ -32,7 +32,7 @@
             <label for="url">Url</label>
             <input type="text" name="url"/>
 
-            <input type="submit" value="Agregar" />
+            <input type="submit" value="Actualizar" />
        
         </fieldset>   
         

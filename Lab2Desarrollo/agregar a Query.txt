@@ -1,0 +1,35 @@
+
+
+				create procedure sp_delete_video
+				@idvideo int
+				as
+				begin 
+				if exist (select*from video where idVideo=@idVideo)
+				begin
+				delete from video where idVideo=@idVideo
+				print ('Registro eliminado')
+				end
+				begin
+				print ('No existe registro a eliminar')
+				end
+				--Eliminar video--
+				
+				create procedure sp_update_video
+				@idVideo int,
+				@titulo varchar(100),
+				@repro int,
+				@url varchar(100)
+				as
+				begin
+				if exist (select*from video where idVideo=@idVideo)
+				begin
+				update video set titulo=@titulo, repro=@repro, url=@url where idVideo=@idvideo
+				print ('Registro actualizado')
+				end
+				begin
+				print('No es posible actualizar registro')
+				end
+				--Actualizar video--
+				
+				
+				
